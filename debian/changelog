@@ -1,5 +1,6 @@
 python-mypy-zope (1.0.7-0+pexip24u1) pexip; urgency=medium
 
   * Prepare Pexip Packaging
+  * Apply patch to fix tests with our mypy version
 
  -- Huw Jones <huw@pexip.com>  Fri, 18 Oct 2024 09:20:51 +0000

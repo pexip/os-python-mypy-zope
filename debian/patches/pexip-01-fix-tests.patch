@@ -1,0 +1,75 @@
+diff --git a/tests/samples/interface_implications.py b/tests/samples/interface_implications.py
+index 528b865..a1d8a34 100644
+--- a/tests/samples/interface_implications.py
++++ b/tests/samples/interface_implications.py
+@@ -36,8 +36,8 @@ if __name__ == '__main__':
+ interface_implications.py:19: note: Revealed type is "None"
+ interface_implications.py:21: note: Revealed type is "__main__.IBookmark"
+ interface_implications.py:22: note: Revealed type is "Union[__main__.IBookmark, None]"
+-interface_implications.py:26: note: Revealed type is "type[__main__.IBookmark]"
+-interface_implications.py:28: note: Revealed type is "type[None]"
+-interface_implications.py:29: note: Revealed type is "Union[type[__main__.IBookmark], type[None]]"
++interface_implications.py:26: note: Revealed type is "Type[__main__.IBookmark]"
++interface_implications.py:28: note: Revealed type is "Union[Type[__main__.IBookmark], Type[None]]"
++interface_implications.py:29: note: Revealed type is "Union[Type[__main__.IBookmark], Type[None]]"
+  </output>
+ """
+diff --git a/tests/samples/parameterized_types.py b/tests/samples/parameterized_types.py
+index c850e67..bf388d9 100644
+--- a/tests/samples/parameterized_types.py
++++ b/tests/samples/parameterized_types.py
+@@ -18,7 +18,7 @@ class Something(object):
+ 
+ """
+ <output>
+-parameterized_types.py:15: error: Argument 1 of "Something" is incompatible with "hello" of supertype "ISomething"; supertype defines the argument type as "list[str]"
++parameterized_types.py:15: error: Argument 1 of "Something" is incompatible with "hello" of supertype "ISomething"; supertype defines the argument type as "List[str]"
+ parameterized_types.py:15: note: This violates the Liskov substitution principle
+ parameterized_types.py:15: note: See https://mypy.readthedocs.io/en/stable/common_issues.html#incompatible-overrides
+ </output>
+diff --git a/tests/samples/schema_bool.py b/tests/samples/schema_bool.py
+index 90cd6d6..de9be86 100644
+--- a/tests/samples/schema_bool.py
++++ b/tests/samples/schema_bool.py
+@@ -20,6 +20,6 @@ if __name__ == '__main__':
+ 
+ """
+ <output>
+-schema_bool.py:14: error: Incompatible types in assignment (expression has type "int", variable has type "bool | None")
++schema_bool.py:14: error: Incompatible types in assignment (expression has type "int", variable has type "Optional[bool]")
+ </output>
+ """
+diff --git a/tests/samples/schema_number.py b/tests/samples/schema_number.py
+index 0a176ca..0f2fb09 100644
+--- a/tests/samples/schema_number.py
++++ b/tests/samples/schema_number.py
+@@ -34,9 +34,9 @@ if __name__ == '__main__':
+ 
+ """
+ <output>
+-schema_number.py:20: error: Incompatible types in assignment (expression has type "str", variable has type "complex | None")
+-schema_number.py:24: error: Incompatible types in assignment (expression has type "complex", variable has type "float | None")
+-schema_number.py:27: error: Incompatible types in assignment (expression has type "complex", variable has type "int | None")
+-schema_number.py:28: error: Incompatible types in assignment (expression has type "float", variable has type "int | None")
++schema_number.py:20: error: Incompatible types in assignment (expression has type "str", variable has type "Optional[complex]")
++schema_number.py:24: error: Incompatible types in assignment (expression has type "complex", variable has type "Optional[float]")
++schema_number.py:27: error: Incompatible types in assignment (expression has type "complex", variable has type "Optional[int]")
++schema_number.py:28: error: Incompatible types in assignment (expression has type "float", variable has type "Optional[int]")
+ </output>
+ """
+diff --git a/tests/samples/schema_text.py b/tests/samples/schema_text.py
+index f2b99e1..0ab5b6b 100644
+--- a/tests/samples/schema_text.py
++++ b/tests/samples/schema_text.py
+@@ -40,9 +40,9 @@ if __name__ == '__main__':
+ 
+ """
+ <output>
+-schema_text.py:33: error: Incompatible types in assignment (expression has type "int", variable has type "str | None")
++schema_text.py:33: error: Incompatible types in assignment (expression has type "int", variable has type "Optional[str]")
+ schema_text.py:34: error: Incompatible types in assignment (expression has type "None", variable has type "str")
+ schema_text.py:35: error: Incompatible types in assignment (expression has type "None", variable has type "str")
+-schema_text.py:36: error: Incompatible types in assignment (expression has type "bool", variable has type "str | None")
++schema_text.py:36: error: Incompatible types in assignment (expression has type "bool", variable has type "Optional[str]")
+ </output>
+ """
