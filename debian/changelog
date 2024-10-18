@@ -1,0 +1,5 @@
+python-mypy-zope (1.0.7-0+pexip24u1) pexip; urgency=medium
+
+  * Prepare Pexip Packaging
+
+ -- Huw Jones <huw@pexip.com>  Fri, 18 Oct 2024 09:20:51 +0000

@@ -1,0 +1,27 @@
+Source: python-mypy-zope
+Section: python
+Priority: optional
+Maintainer: Pexip AS <packaging@pexip.com>
+Rules-Requires-Root: no
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-python,
+ python3-setuptools,
+ python3-all,
+ python3-pytest,
+ mypy,
+ python3-zope.interface,
+ python3-zope.schema,
+Standards-Version: 4.6.2
+Homepage: https://github.com/Shoobx/mypy-zope
+Vcs-Browser: https://github.com/pexip/os-python-mypy-zope
+Vcs-Git: https://github.com/pexip/os-python-mypy-zope.git
+
+Package: python3-mypy-zope
+Architecture: all
+Depends:
+ ${python3:Depends},
+ ${misc:Depends},
+Description: Plugin for mypy to support zope.interface
+ The goal is to be able to make zope interfaces to be treated as types in mypy
+ sense.
